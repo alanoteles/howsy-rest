@@ -29,8 +29,9 @@
 		  </ul>
 		</nav>
 		<div class="card card-body mb-2" v-for="property in properties" v-bind:key="property.id">
-			<h4>{{ property.address_1 }} - {{ property.address_2 }}</h4>
+			<h4>{{ property.address_1 }}  {{ property.address_2 }}</h4>
 			<p>{{ property.city }} - {{ property.postcode }}</p>
+			<p v-if="property.latitude">Latitude : {{ property.latitude }} - Longitude : {{ property.longitude }}</p>
 			<button @click="editProperty(property)" class="btn btn-warning mb-2">Edit</button>
 			<button @click="deleteProperty(property.id)" class="btn btn-danger">Delete</button>
 		</div>
