@@ -1,5 +1,5 @@
 # howsy-rest
-Howsy test
+**How to install**
 
 After cloning, run the following commands :
 
