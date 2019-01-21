@@ -1,0 +1,35 @@
+version: '3.4'
+services:
+  php:
+    image: jfernancordova/docker-laravel-api-dev:1.0.2
+    environment:
+      APP_NAME: docker-laravel-api-dev
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_KEY: 
+      APP_LOG_LEVEL: debug
+      APP_URL: "http://localhost"
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_DATABASE: howsy
+      DB_USERNAME: howsy
+      DB_PASSWORD: howsy
+      XDEBUG_MODE: 1
+    depends_on:
+      - db
+    ports:
+      - "80:80"
+    volumes:
+      - .:/docker-laravel-api-dev
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: howsy
+      MYSQL_USER: howsy
+      MYSQL_PASSWORD: howsy
+      MYSQL_ROOT_PASSWORD: howsy
+    volumes:
+      - .docker/local-mysql-datadir:/var/lib/mysql
