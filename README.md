@@ -21,4 +21,4 @@ POST (create) : ```/address```\
 PUT (update) : ```/address```\
 DELETE : ```/address/ID```
 
-
+If you run ```npm run dev```, there's a small VueJs CRUD app available showing the records.
