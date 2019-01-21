@@ -16,7 +16,7 @@ class CreatedPropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
             $table->string('address_1', 250);
-            $table->string('address_2', 250);
+            $table->string('address_2', 250)->nullable();
             $table->string('city', 250)->nullable();
             $table->string('postcode', 25)->nullable();
             $table->timestamps();
